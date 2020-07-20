@@ -7,7 +7,7 @@ var socketControls = function(io){
   	console.log(socket.id);
 
     socket.on('newEntry', function(data){
-      let id = generateID();
+      let id = generateID(entries); //will loop through the id proerty of each entry
       let entry = new Entry(id, data.text, data.x, data.y);
     });
   });

@@ -1,4 +1,3 @@
-require('dotenv').config();
 var socket = require('socket.io');
 var express = require('express');
 var app = express();
