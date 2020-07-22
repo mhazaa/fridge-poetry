@@ -1,6 +1,6 @@
 var Entry = require('./classes/Entry.js');
 var generateID = require('.functions/generateID');
-var entries = {};
+var entries = [];
 
 var socketControls = function(io){
   io.on('connection', function(socket){
@@ -9,7 +9,7 @@ var socketControls = function(io){
     socket.on('newEntry', function(data){
       let id = generateID(entries); //will loop through the id proerty of each entry
       let entry = new Entry(id, data.text, data.x, data.y);
-      entries[id] = entry;
+      //entries[id]
     });
 
     socket.on('moveEntry', function(data){

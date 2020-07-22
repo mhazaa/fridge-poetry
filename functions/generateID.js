@@ -5,9 +5,9 @@ function generateRandomInt(min, max) {
 var generateID = function(entries){
   var id = generateRandomInt(1, 100000);
 
-  entries.forEach(function(entry){
-    if(id == entry.id) generateID(entries);
-  });
+  for(var key in entries){
+    if(id == key) generateID(entries);
+  }
 
   return id;
 }
